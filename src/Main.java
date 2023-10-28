@@ -1,36 +1,26 @@
-/*    Д/з Класс Phone.
- - Создайте класс Phone, который содержит переменные number, model и weight.
- - Создайте три экземпляра этого класса.
- - Выведите на консоль значения их переменных.
- - Добавить в класс Phone методы: receiveCall, имеет один параметр – имя звонящего. Выводит на консоль
-сообщение “Звонит {name}”. Метод getNumber – возвращает номер телефона. Вызвать эти методы для каждого из объектов.
- - Добавить конструктор в класс Phone, который принимает на вход три параметра для инициализации переменных
-класса - number, model и weight.
- - Добавить конструктор, который принимает на вход два параметра для инициализации переменных класса - number, model.
- - Добавить конструктор без параметров.    */
-
+/* Д/3 Доработать класс Phone. Сделать его абстрактным. Метод info() сделать абстрактным.
+Также добавить классы-наследники от Phone - SamsungPhone, XiaomiPhone и ApplePhone.
+Реализацию info() в каждом классе-наследнике. Создать объекты каждого класса-наследника
+и проверить метод Info(). */
 public class Main {
     public static void main(String[] args) {
-        Phone phone1 = new Phone("123-456-789", "iPhone X", 0.4);
-        Phone phone2 = new Phone("987-654-321", "Samsung Galaxy S20");
-        Phone phone3 = new Phone();
+        ApplePhone phone = new ApplePhone();
+        phone.setModel("iPhone 14 Pro");
+        phone.setNumber("8(911)111-11-11");
+        phone.setWeight(0.206);
 
-        System.out.println("Телефон 1:");
-        System.out.println("Номер: " + phone1.getNumber());
-        System.out.println("Модель: " + phone1.getModel());
-        System.out.println("Вес: " + phone1.getWeight() + " кг");
-        phone1.receiveCall("Анна");
+        phone.receiveCall("Anna");
+        System.out.println(phone.getNumber());
+        phone.info();
 
-        System.out.println("\nТелефон 2:");
-        System.out.println("Номер: " + phone2.getNumber());
-        System.out.println("Модель: " + phone2.getModel());
-        System.out.println("Вес: " + phone2.getWeight() + " кг");
-        phone2.receiveCall("Петр");
+        XiaomiPhone phone2 = new XiaomiPhone("8(933)333-33-33","Xiaomi 14 Pro");
+        phone2.receiveCall("Alex");
+        System.out.println(phone2.getNumber());
+        phone2.info();
 
-        System.out.println("\nТелефон 3:");
-        System.out.println("Номер: " + phone3.getNumber());
-        System.out.println("Модель: " + phone3.getModel());
-        System.out.println("Вес: " + phone3.getWeight() + " кг");
-        phone3.receiveCall("Иван");
+        SamsungPhone phone3 = new SamsungPhone("8(955)555-55-55","Galaxy S23 Ultra", 0.234);
+        phone3.receiveCall("Ivan");
+        System.out.println(phone3.getNumber());
+        phone3.info();
     }
 }
