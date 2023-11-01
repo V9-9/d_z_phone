@@ -1,4 +1,4 @@
-public abstract class Phone {
+public abstract class Phone implements Callable, Informable {
     private String number;
     private String model;
     private double weight;
@@ -42,10 +42,12 @@ public abstract class Phone {
         this.weight = weight;
     }
 
-    public void receiveCall(String name){
-        System.out.printf("Call %s\n", name);
-    }
+    @Override
+    public abstract void receiveCall(String name);
 
+    @Override
     public abstract void info();
 
+    @Override
+    public abstract void infoDefault();
 }

@@ -4,7 +4,18 @@ public class XiaomiPhone extends Phone{
     }
 
     @Override
+    public void receiveCall(String name) {
+        System.out.printf("Call: %s\n", name);
+    }
+
+
+    @Override
     public void info() {
         System.out.printf("XiaomiPhone: model=%s, number=%s\n", this.getModel(), this.getNumber());
+    }
+
+    @Override
+    public void infoDefault() {
+
     }
 }

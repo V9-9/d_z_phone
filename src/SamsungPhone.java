@@ -4,7 +4,18 @@ public class SamsungPhone extends Phone{
     }
 
     @Override
+    public void receiveCall(String name) {
+        System.out.printf("Call - %s\n", name);
+    }
+
+
+    @Override
     public void info() {
         System.out.printf("SamsungPhone: model=%s, number=%s, weight=%.2f\n", this.getModel(), this.getNumber(), this.getWeight());
+    }
+
+    @Override
+    public void infoDefault(){
+        System.out.println("Hello");
     }
 }
