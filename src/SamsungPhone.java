@@ -1,21 +1,10 @@
-public class SamsungPhone extends Phone{
+public class SamsungPhone extends Phone<String> {
     public SamsungPhone(String number, String model, double weight) {
         super(number, model, weight);
     }
 
     @Override
-    public void receiveCall(String name) {
-        System.out.printf("Call - %s\n", name);
-    }
-
-
-    @Override
-    public void info() {
+    public void info(String data) {
         System.out.printf("SamsungPhone: model=%s, number=%s, weight=%.2f\n", this.getModel(), this.getNumber(), this.getWeight());
-    }
-
-    @Override
-    public void infoDefault(){
-        System.out.println("Hello");
     }
 }

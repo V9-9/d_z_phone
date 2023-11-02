@@ -1,19 +1,9 @@
-public class ApplePhone extends Phone{
+public class ApplePhone extends Phone<String> {
     public ApplePhone() {
     }
 
     @Override
-    public void receiveCall(String name) {
-        System.out.printf("Call %s\n", name);
-    }
-
-    @Override
-    public void info() {
+    public void info(String data) {
         System.out.printf("ApplePhone: model=%s, number=%s, weight=%.2f\n", this.getModel(), this.getNumber(), this.getWeight());
-    }
-
-    @Override
-    public void infoDefault() {
-
     }
 }

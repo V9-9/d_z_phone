@@ -1,9 +1,6 @@
-public interface Informable {
+public interface Informable<T> {
 
-    void info();
-
-    default void infoDefault() {
-        System.out.println("Default info");
+    default void info(T data){
+        System.out.println("Information: " + data.toString());
     }
-
 }
