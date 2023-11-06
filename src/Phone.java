@@ -1,4 +1,4 @@
-public abstract class Phone<T> implements Callable<T>, Informable<T> {
+public abstract class Phone implements Callable<String>, Informable<String> {
     private String number;
     private String model;
     private double weight;
@@ -42,11 +42,21 @@ public abstract class Phone<T> implements Callable<T>, Informable<T> {
         this.weight = weight;
     }
 
-    @Override
-    public void receiveCall(T name){
+    public void receiveCall(String name){
+        if (name.length()<4){
+            try{
+                throw new NameException("The length of the name is less than 4 characters");
+            } catch (NameException e) {
+                throw new IllegalArgumentException("Error: " + e.getMessage(), e);
+            }
+        }
+
         System.out.printf("Call %s\n", name);
     }
 
-    @Override
-    public abstract void info(T data);
+    public abstract void info();
+
+    public void inform(String mes) {
+        System.out.println("Message: " + mes);
+    }
 }

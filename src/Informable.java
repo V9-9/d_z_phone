@@ -1,6 +1,8 @@
 public interface Informable<T> {
 
-    default void info(T data){
-        System.out.println("Information: " + data.toString());
+    default void infoD(){
+        System.out.println("There is no information at this stage");
     }
+
+    void inform(T mes);
 }
