@@ -1,7 +1,7 @@
 /*  Д/з добавить в проект Phone свой класс NameException, исправим метод receiveCall
 получаем имя от пользователя и получаем исключение, если длина имени меньше 4 символов. */
 public class Main {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws NameException{
 
         ApplePhone phone = new ApplePhone();
         phone.setModel("iPhone 14 Pro");

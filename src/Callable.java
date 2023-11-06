@@ -1,5 +1,5 @@
 public interface Callable<T> {
 
-    void receiveCall(T name);
+    void receiveCall(T name) throws NameException;
 
 }

@@ -42,15 +42,8 @@ public abstract class Phone implements Callable<String>, Informable<String> {
         this.weight = weight;
     }
 
-    public void receiveCall(String name){
-        if (name.length()<4){
-            try{
-                throw new NameException("The length of the name is less than 4 characters");
-            } catch (NameException e) {
-                throw new IllegalArgumentException("Error: " + e.getMessage(), e);
-            }
-        }
-
+    public void receiveCall(String name) throws NameException{
+        if (name.length()<4) throw new NameException("The length of the name is less than 4 characters");
         System.out.printf("Call %s\n", name);
     }
 
